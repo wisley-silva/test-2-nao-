@@ -1,0 +1,37 @@
+/*
+-- Aluno: Wísley Vaz Silva
+-- Numero: a22506371
+-- Turma: D01EINF02
+-- Horário: 30/10/2026 | 10:00
+-- Caso de estudo: Reservas de alojamento
+*/
+
+/*1*/
+
+CREATE SCHEMA s22506371;
+GO
+
+CREATE TABLE s22506371.hospede(
+    hospede_id INT NOT NULL PRIMARY KEY,
+    hospede_nome VARCHAR(40) NOT NULL,
+    hospede_email VARCHAR(30) NOT NULL,
+
+)
+
+CREATE TABLE s22506371.alojamento(
+    alojamento_id INT NOT NULL PRIMARY KEY,
+    alojamento_tipo VARCHAR(20) NOT NULL,
+    alojamento_nome VARCHAR(20) NOT NULL
+)
+
+CREATE TABLE s22506371.reserva (
+    reserva_id INT  PRIMARY KEY,
+    hospede_id INT NULL,
+    alojamento_id VARCHAR(20) NOT NULL,
+    data_inicio DATE NOT NULL,
+    data_fim DATE NOT NULL,
+);
+
+SELECT TABLE_SCHEMA, TABLE_NAME 
+FROM INFORMATION_SCHEMA.TABLES 
+WHERE TABLE_SCHEMA = 's22506371';
